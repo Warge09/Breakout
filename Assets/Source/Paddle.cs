@@ -16,15 +16,15 @@ public class Paddle : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.D))
-        {
+        if (Input.GetKeyDown(KeyCode.D) ^ Input.GetKeyDown(KeyCode.RightArrow))
+        { 
             Vector3 Pos = new Vector3(0, 0, 1);
             Pos = Speed * Time.deltaTime * Pos.normalized;
             Rigidbody.MovePosition(transform.position - Pos);
             Debug.Log("working");
         }
 
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A) ^ Input.GetKeyDown(KeyCode.LeftArrow))
         {
             Vector3 Pos = new Vector3(0, 0, 1);
             Pos = Speed * Time.deltaTime * Pos.normalized;
