@@ -16,7 +16,7 @@ public class Paddle : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.D) ^ Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         { 
             Vector3 Pos = new Vector3(0, 0, 1);
             Pos = Speed * Time.deltaTime * Pos.normalized;
@@ -24,7 +24,7 @@ public class Paddle : MonoBehaviour
             Debug.Log("working");
         }
 
-        if (Input.GetKeyDown(KeyCode.A) ^ Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             Vector3 Pos = new Vector3(0, 0, 1);
             Pos = Speed * Time.deltaTime * Pos.normalized;
