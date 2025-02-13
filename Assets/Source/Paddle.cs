@@ -20,8 +20,7 @@ public class Paddle : MonoBehaviour
         { 
             Vector3 Pos = new Vector3(0, 0, 1);
             Pos = Speed * Time.deltaTime * Pos.normalized;
-            Rigidbody.MovePosition(transform.position - Pos);
-            Debug.Log("working");
+            Rigidbody.MovePosition(transform.position - Pos);   
         }
 
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
@@ -29,7 +28,6 @@ public class Paddle : MonoBehaviour
             Vector3 Pos = new Vector3(0, 0, 1);
             Pos = Speed * Time.deltaTime * Pos.normalized;
             Rigidbody.MovePosition(transform.position + Pos);
-            Debug.Log("working");     
         }
         
     }

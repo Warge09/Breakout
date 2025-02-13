@@ -4,7 +4,7 @@ public class Ball : MonoBehaviour
 {
     public Rigidbody Rigidbody;
     float Speed;
-    float StartVelocity;
+    [SerializeField] public float StartVelocity;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
