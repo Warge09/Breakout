@@ -1,15 +1,15 @@
+using System;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 public class NewMonoBehaviourScript : MonoBehaviour
 {
     private float speed = 5.0f;
-    Collider[] m_colliders;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        m_colliders = GetComponents<BoxCollider>();
-        
+       
     }
 
     private void Update()
@@ -23,14 +23,11 @@ public class NewMonoBehaviourScript : MonoBehaviour
         {
 
             Destroy(gameObject);
-   
-        }
-       else
-        {
-            Debug.Log("NOT THE PADDLE");
-        }
-        
-    }
 
+        }
+        else {
+            Console.WriteLine("NOT THE PADDLE");
+        }
+    }
 }
 

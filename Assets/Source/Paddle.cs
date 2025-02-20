@@ -1,10 +1,15 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Timers;
+using System;
 
 public class Paddle : MonoBehaviour
 {
     private Rigidbody Rigidbody;
     public float Speed;
+    private Timer Timer = new Timer(1000);
+    private bool TimerStarted = false;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -30,5 +35,17 @@ public class Paddle : MonoBehaviour
             Rigidbody.MovePosition(transform.position + Pos);
         }
         
+    }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Powerup")
+        {
+            Rigidbody.transform.localScale = new Vector3(2, 1, 50);
+            TimerStarted = true;
+            
+
+        }
+
     }
 }
